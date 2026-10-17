@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objet room — 3D 중고 쇼룸</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%2322211F' stroke-width='3'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="./assets/index-Du7b5foE.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CVKEPmtE.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="wordmark">objet<span>room</span></div>
+        <div class="mode-switch" role="radiogroup" aria-label="모드">
+          <button role="radio" data-mode="seller" aria-checked="true">판매자</button>
+          <button role="radio" data-mode="buyer" aria-checked="false">구매자</button>
+        </div>
+        <div class="top-status">
+          <span class="meta" id="storage-status" title="저장 위치">저장 · 이 탭 세션에만 (새로고침 시 삭제)</span>
+          <span class="meta" id="upload-status">외부 전송 없음</span>
+          <button class="camera-pill" id="camera-pill" data-state="off"><i></i><span>카메라 꺼짐</span></button>
+          <button class="icon-btn" id="help-btn" aria-label="조작 방법" title="조작 방법 (?)">?</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="stage" id="stage" tabindex="-1" aria-label="제품 관찰 영역">
+          <div class="stage-intro" id="stage-intro"></div>
+          <div class="stage-tags">
+            <span class="gesture-chip" id="gesture-chip" hidden></span>
+            <span class="model-badge" id="model-badge" hidden></span>
+          </div>
+          <aside class="info-card" id="info-card" hidden></aside>
+          <figure class="cam-preview" id="cam-preview" hidden>
+            <div class="cam-frame"><canvas id="hand-canvas"></canvas></div>
+            <figcaption id="cam-caption">카메라 · 영상은 이 기기에서만 처리</figcaption>
+          </figure>
+          <div class="scan-layer" id="scan-layer" hidden></div>
+        </section>
+
+        <aside class="shelf" aria-label="저장 슬롯">
+          <header class="shelf-head">
+            <span class="eyebrow" id="shelf-title">보관함</span>
+            <span class="eyebrow mute" id="shelf-count">0 / 5</span>
+          </header>
+          <ol class="slots" id="slots"></ol>
+          <p class="shelf-note" id="shelf-note"></p>
+        </aside>
+      </main>
+
+      <footer class="dock">
+        <div class="guide" aria-live="polite">
+          <p class="guide-main" id="guide-main"></p>
+          <p class="guide-sub" id="guide-sub"></p>
+        </div>
+        <div class="actions" id="actions"></div>
+      </footer>
+    </div>
+
+    <div class="overlay" aria-hidden="true">
+      <div class="cursor right" id="cursor-right" hidden></div>
+      <div class="cursor left" id="cursor-left" hidden></div>
+      <div class="ghost" id="ghost" hidden><img alt="" /></div>
+    </div>
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <dialog id="dialog"></dialog>
+
+  </body>
+</html>
